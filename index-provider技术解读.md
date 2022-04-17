@@ -1,6 +1,6 @@
 ## Index Provider技术解读
 
-本文是[Indexer-Node-Design](https://www.notion.so/Indexer-Node-Design-4fb94471b6be4352b6849dc9b9527825#27801c0852c84da2b7a818142ed7abb7)的翻译,并加入了译者的理解.
+本文是[Indexer-Node-Design](https://www.notion.so/Indexer-Node-Design-4fb94471b6be4352b6849dc9b9527825#27801c0852c84da2b7a818142ed7abb7)的翻译,并加入了一些译者自己的理解.
 
 ### 概述
 
