@@ -12,7 +12,7 @@ indexer发现新的data provider后, 通过监听其发布到gossip pub-sub主�
 
 为了处理来自任意数量provider的任何数量的索引数据, indexer节点需要能够水平扩展,以便在indexers池中进行负载均衡. indexer池的大小需要可以动态变化.
 
-![](indexer_provider_architecture.png)
+![indexer_provider_architecture](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/indexer_provider_architecture.png?raw=true)
 
 
 
@@ -301,12 +301,12 @@ Network should allow providers to announce billions of content addresses.
 
 #### 缓存内存用量
 
-![cache mem use](cache_mem_use.png)
+![cache mem use](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/cache_mem_use.png?raw=true)
 存储100万条mutlhash大概使用200M内存.
 
 #### 持久化存储
 
-![storage use per CIDs in storage](cids_storage_use.png)
+![storage use per CIDs in storage](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/cids_storage_use.png?raw=true)
 图中展示的是[`StoreTheHash`](https://github.com/ipld/go-storethehash)和`Pogreb`数据库的数量/用量图.
 
 #### 查询耗时
