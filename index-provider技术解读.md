@@ -12,7 +12,7 @@ indexer发现新的data provider后, 通过监听其发布到gossip pub-sub主�
 
 为了处理来自任意数量provider的任何数量的索引数据, indexer节点需要能够水平扩展,以便在indexers池中进行负载均衡. indexer池的大小需要可以动态变化.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd0a55510-fa1d-4850-a024-be2f95f3d5a5%2Findexer_ecosys.png?table=block&id=db5050cd-5c79-478a-adbe-8bf7dbe7152a&spaceId=ff450f73-1d51-4a00-9cab-b0bc369a3622&width=1630&userId=&cache=v2)
+![](indexer_provider_architecture.png)
 
 
 
@@ -301,12 +301,12 @@ Network should allow providers to announce billions of content addresses.
 
 #### 缓存内存用量
 
-![cache mem use](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F08c1c173-5b45-4027-b75f-a9b39dca862a%2Fmemorymib_cids.png?table=block&id=91215eb1-26a2-4c13-a37e-3d7ca265ade9&spaceId=ff450f73-1d51-4a00-9cab-b0bc369a3622&width=1200&userId=&cache=v2)
+![cache mem use](cache_mem_use.png)
 存储100万条mutlhash大概使用200M内存.
 
 #### 持久化存储
 
-![storage use per CIDs in storage](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F425f0888-a85a-4a0c-bd27-7b1aa1c74010%2FUntitled.png?table=block&id=c1157ac7-f8d0-489e-840a-d944824094fb&spaceId=ff450f73-1d51-4a00-9cab-b0bc369a3622&width=1220&userId=&cache=v2)
+![storage use per CIDs in storage](cids_storage_use.png)
 图中展示的是[`StoreTheHash`](https://github.com/ipld/go-storethehash)和`Pogreb`数据库的数量/用量图.
 
 #### 查询耗时
