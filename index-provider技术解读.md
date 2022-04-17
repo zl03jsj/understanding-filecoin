@@ -316,7 +316,7 @@ Network should allow providers to announce billions of content addresses.
 |平均耗时 获取单个(ms)|0.003|0.012|75%|
 |平均耗时 并发-20个携程(ms)|0.008|0.047|82.98%|
 
-#### 加载测试
+#### 负载测试
 
 测试环境为:AWS的t2.xlarge, st1存储使用`storetheindex`.实例对外暴露API来监听请求.负载是从我本机环境发送GET请求到API来产生的. 请求中的multihash是从数据集中随机抽取, 遵守:(i) Zipf分布, (ii) uniform分布.
 ||<u>Aa</u>sth|sth+cache|cache|
