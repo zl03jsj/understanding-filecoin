@@ -71,12 +71,12 @@ Catalog/<id>/TBD (semantic for selection)
 > 也就是说:DAGStore生成了3种索引类型.[DAGStore中的3种索引介绍](https://github.com/filecoin-project/dagstore/blob/master/docs/design.md#index-repository)3种索引:
 >
 > 理解这个问题, 需要从car文件说起:
-> ![This diagram shows how IPLD blocks, their root CID, and a header combine to form a CAR.](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/content-addressable-archives.png?raw=true)
+> <img src="https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/content-addressable-archives.png?raw=true" alt="This diagram shows how IPLD blocks, their root CID, and a header combine to form a CAR." style="zoom:50%;" />
 >
 > CAR文件实际上是把文件分成很多固定大小的数据块, 这些数据库作为叶子节点形成的一棵树.
 > 不同的文件生成CAR文件时, 可能存在相同的数据块, 这个时候这些相同的数据块对应的cid就是一样的.
 >
-> **Full shard indices** 的意思是说, 对于每个数据块, 都生成了一个其在文件内部的索引, 索引的形式为::{cid: offset}, 
+> **Full shard indices** 的意思是说, 对于每个数据块, 都生成了一个其在文件内部的索引, 索引的形式为::{cid: offset}, 所以说是`全`的
 >
 > **Top-level cross-shard index(multihash)** 的意思是说, 这种类型的索引是跨分片的,对应的是整个data-providerr存储的所有的数据. 对于不同文件中的相同的数据块,只会创建一份索引.
 
@@ -358,7 +358,7 @@ Dumbo drop(7月): 订单总容量约1600个驱动器(每个驱动器约7000个de
 
 #### 负载测试
 
-测试环境为:AWS的t2.xlarge, st1存储使用`storetheindex`.实例对外暴露API监听请求.从我本机环境发送GET请求到API来产生负载. 请求中的multihash是从数据集中随机抽取, 遵守:(i) Zipf分布; (ii) uniform分布.
+测试环境为:AWS的t2.xlarge, st1存储使用`storethehash.实例对外暴露API监听请求.从我本机环境发送GET请求到API来产生负载. 请求中的multihash是从数据集中随机抽取, 遵守:(i) Zipf分布; (ii) uniform分布.
 
 > 译者注: 
 > Zipf分布:20%的资源占了总请求量的80%. 及我们常说的2/8原则.
