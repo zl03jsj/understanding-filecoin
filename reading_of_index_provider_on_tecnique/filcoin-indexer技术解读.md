@@ -23,8 +23,7 @@ Filecoin是一个提供存储服务的平台.
 索引器节点通过订阅gossip pub-sub的主题, 接收data-privider发布的关于数据更新的通知. indexer还可以通过监控旷工在链上的活动来发现数据的变化. 这些链上的信息让indexers发现新的数据,并且数据的索引入口能够从某个已经存在或新的provider上获取. indexer可以自由的决定: 是否, 何时, 从哪个provider, 拉取哪些类型的索引, 完全基于indexer对于此provider的策略.
 
 为了处理来自任意数量provider的任何规模的索引数据, indexer节点需要能够水平扩展,以便在indexers集群中进行负载均衡. indexer集群的大小需要可以动态变化.
-
-![indexer_provider_architecture](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/indexer_provider_architecture.png?raw=true)
+![indexer_provider_architecture](https://github.com/zl03jsj/understanding-filecoin/blob/master/reading_of_index_provider_on_tecnique/indexer_provider_architecture.png?raw=true)
 
 
 
@@ -71,7 +70,7 @@ Catalog/<id>/TBD (semantic for selection)
 > 也就是说:DAGStore生成了3种索引类型.[DAGStore中的3种索引介绍](https://github.com/filecoin-project/dagstore/blob/master/docs/design.md#index-repository)3种索引:
 >
 > 理解这个问题, 需要从car文件说起:
-> <img src="https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/content-addressable-archives.png?raw=true" alt="This diagram shows how IPLD blocks, their root CID, and a header combine to form a CAR." style="zoom:50%;" />
+> <img src="https://github.com/zl03jsj/understanding-filecoin/blob/master/reading_of_index_provider_on_tecnique/content-addressable-archives.png?raw=true" alt="This diagram shows how IPLD blocks, their root CID, and a header combine to form a CAR." style="zoom:50%;" />
 >
 > CAR文件实际上是把文件分成很多固定大小的数据块, 这些数据库作为叶子节点形成的一棵树.
 > 不同的文件生成CAR文件时, 可能存在相同的数据块, 这个时候这些相同的数据块对应的cid就是一样的.
@@ -341,12 +340,12 @@ Dumbo drop(7月): 订单总容量约1600个驱动器(每个驱动器约7000个de
 
 #### 缓存内存用量
 
-![cache mem use](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/cache_mem_use.png?raw=true)
+![cache mem use](https://github.com/zl03jsj/understanding-filecoin/blob/master/reading_of_index_provider_on_tecnique/cache_mem_use.png?raw=true)
 存储100万条mutlhash大概使用200M内存.
 
 #### 持久化存储
 
-![storage use per CIDs in storage](https://github.com/zl03jsj/reading_of_index_provider_on_tecnique/blob/master/cids_storage_use.png?raw=true)
+![storage use per CIDs in storage](https://github.com/zl03jsj/understanding-filecoin/blob/master/reading_of_index_provider_on_tecnique/cids_storage_use.png?raw=true)
 图中展示的是[`StoreTheHash`](https://github.com/ipld/go-storethehash)和`Pogreb`数据库的数量/用量图.
 
 #### 查询耗时
